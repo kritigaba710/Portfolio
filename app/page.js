@@ -1,7 +1,6 @@
 "use client"
 import Image from "next/image";
 import Head from "next/head";
-import GradientLine from "./components/GradientCurve";
 import { useRef, useState } from "react";
 
 export default function Home() {
@@ -13,7 +12,11 @@ export default function Home() {
   };
 
   return (
-    <div className="relative h-full w-full overflow-hidden bg-slate-950"><div className="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div><div className="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div>
+    <div className="relative h-full w-full overflow-hidden bg-slate-950 "   style={{
+      background: 'radial-gradient(circle, rgba(15, 19, 41, 1) 12%, rgba(23, 2, 32, 1) 64%)',
+      padding: '20px',
+      borderRadius: '8px',
+    }}>
 
       <Head>
         <title>Kriti - Portfolio</title>
@@ -43,6 +46,7 @@ export default function Home() {
           <a href="#projects" className="mt-6 inline-block py-1.5 px-3 rounded-full text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-2 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 fade-in">View My Work</a>
         </header>
 
+
         <section id="about" className="py-20 pt-30 max-w-4xl mx-auto">
           <h2 className="text-4xl font-semibold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">About Me</h2>
           <div className="flex flex-col md:flex-row justify-center items-center mt-8">
@@ -56,15 +60,12 @@ export default function Home() {
               <span className="text-3xl mx-2">Kriti</span>
               <p className="text-gray-500 text-sm mx-3">
                 I am a MERN stack Developer with a strong passion for building dynamic, scalable, and high-performance web applications. With expertise in MongoDB, Express.js, React, and Node.js, I specialize in developing responsive front-end interfaces and robust back-end systems. My front-end skills allow me to craft seamless and interactive user experiences using React.js, ensuring intuitive and engaging applications. On the backend, I leverage Node.js and Express.js to manage authentication and optimize server-side performance. From designing intuitive UIs using Spline, Figma to handling server-side logic and database operations, I excel in the full-stack development lifecycle, delivering modern web solutions that meet both technical and business needs.
-                I am currently pursuing a Bachelor's of Computers & Applications at Maharishi Markandeshwar University (2023 - 2026) with a CGPA of 8.0/10. My studies focus on advanced computer science concepts, including web development, algorithms, and data structures. I completed high school at Govt. model sanskriti senior seconday School (2017 - 2019) with a focus on mathematics and information technology, securing 87%.
+                I am currently pursuing a Bachelor&apos;s of Computers & Applications at Maharishi Markandeshwar University (2023 - 2026) with a CGPA of 8.0/10. My studies focus on advanced computer science concepts, including web development, algorithms, and data structures. I completed high school at Govt. model sanskriti senior seconday School (2017 - 2019) with a focus on mathematics and information technology, securing 87%.
               </p>
             </div>
           </div>
         </section>
 
-        <div className="p-8">
-      <GradientLine />
-    </div>
 
 
 
@@ -153,8 +154,8 @@ export default function Home() {
 
         <section id="projects" className="py-20 max-w-4xl mx-auto">
           <h2 className="text-3xl font-semibold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Projects</h2>
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-gray-800 p-6 rounded-lg shadow-lg bg-cover bg-center" >
+          <div className="mt-6 grid mx-4 grid-cols-1 md:grid-cols-2 gap-6">
+            <div className=" p-6 rounded-lg shadow-lg bg-cover bg-center bg-gray-800"  >
               <h3 className="text-2xl">Jarvis</h3>
               <hr />
               <p className="mt-2">A voice-controlled personal assistant built using HTML, CSS, and JavaScript. It allows users to perform tasks like fetching real-time information, setting reminders, and controlling applications through voice commands.</p>
