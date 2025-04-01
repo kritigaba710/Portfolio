@@ -1,6 +1,6 @@
 "use client"
-import Head from 'next/head';
-import { useRef, useState } from 'react';
+import Head from "next/head";
+import { useRef, useState } from "react";
 
 export default function Home() {
   const divRef = useRef(null);
@@ -38,7 +38,7 @@ export default function Home() {
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-320 text-white pt-20">
         <header className="text-center py-35">
           <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 fade-in">Welcome To My</h1>
-          <p className='text-3xl font-semibold text-purple-320 fade-in'>Portfolio Website</p>
+          <p className="text-3xl font-semibold text-purple-320 fade-in">Portfolio Website</p>
           <p className="text-sm mt-4 fade-in">I am a versatile developer and designer, creating both functional web applications and visually engaging user interfaces.</p>
           <a href="#projects" className="mt-6 inline-block py-1.5 px-3 rounded-full text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-2 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 fade-in">View My Work</a>
         </header>
@@ -52,7 +52,7 @@ export default function Home() {
     </div>
     {/* Text */}
     <div className="mt-4 flex flex-col w-2/3 text-center md:text-left">
-      <span className="text-3xl font-bold mx-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Hello, I'm</span>
+      <span className="text-3xl font-bold mx-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Hello, I"m</span>
       <span className="text-3xl mx-2">Kriti</span>
       <p className="text-gray-500 text-sm mx-3">
         I am a MERN stack Developer with a strong passion for building dynamic, scalable, and high-performance web applications. With expertise in MongoDB, Express.js, React, and Node.js, I specialize in developing responsive front-end interfaces and robust back-end systems. My front-end skills allow me to craft seamless and interactive user experiences using React.js, ensuring intuitive and engaging applications. On the backend, I leverage Node.js and Express.js to manage authentication and optimize server-side performance. From designing intuitive UIs using Spline, Figma to handling server-side logic and database operations, I excel in the full-stack development lifecycle, delivering modern web solutions that meet both technical and business needs.
@@ -67,7 +67,7 @@ export default function Home() {
           <h2 className="text-4xl font-semibold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Education</h2>
           <div className="mt-6">
             <div className="bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
-              <h3 className="text-2xl">Bachelor's of Computers & Applications</h3>
+              <h3 className="text-2xl">Bachelor"s of Computers & Applications</h3>
               <p className="mt-2">Maharishi Markandeshwar (Deemed to be University)  (2023 - 2026)</p>
               <p className="text-gray-500">CGPA: 8.0/10</p>
               <p className="mt-2 text-gray-400">Studying advanced concepts in computer science, focusing on web development, algorithms, and data structures.</p>
@@ -83,54 +83,54 @@ export default function Home() {
 
         <section id="skills" className="py-20 max-w-4xl mx-auto ">
           <h2 className="text-4xl font-semibold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Skills</h2>
-          <div className='flex gap-36 items-center'>
+          <div className="flex gap-36 items-center">
             <div><img src="./skill.svg" alt="" width={200} height={200} /></div>
-            <div className='flex flex-col'>
-              <button onClick={() => handleButtonClick(1)} className='cursor-pointer flex hover:text-purple-800 items-center text-gray-300'>Frontend Technologies <img width={32} height={32} src="./down.svg" alt="img" className='invert-0' /></button>
+            <div className="flex flex-col">
+              <button onClick={() => handleButtonClick(1)} className="cursor-pointer flex hover:text-purple-800 items-center text-gray-300">Frontend Technologies <img width={32} height={32} src="./down.svg" alt="img" className="invert-0" /></button>
               <div ref={divRef}
-                style={{ display: visibleDiv === 1 ? 'block' : 'none' }}>
-                <ul className='flex gap-6 items-center'>
-                  <li className=''><img src="./html.svg" alt="" width={32} height={32} />HTML5</li>
+                style={{ display: visibleDiv === 1 ? "block" : "none" }}>
+                <ul className="flex gap-6 items-center">
+                  <li className=""><img src="./html.svg" alt="" width={32} height={32} />HTML5</li>
                   <li><img src="./css.avif" alt="" width={32} height={32} />CSS3</li>
-                  <li className='mt-3'><img src="./js.svg" alt="" width={32} height={32} />Javascript</li>
+                  <li className="mt-3"><img src="./js.svg" alt="" width={32} height={32} />Javascript</li>
                   <li><img src="./tailwind.svg" alt="" />TailwindCSS</li>
                 </ul>
               </div>
               <hr />
 
 
-              <button onClick={() => handleButtonClick(2)} className='cursor-pointer hover:text-purple-800  flex items-center  text-gray-300'>Web Frameworks <img width={32} height={32} src="./down.svg" alt="img" className='invert-0' /></button>
+              <button onClick={() => handleButtonClick(2)} className="cursor-pointer hover:text-purple-800  flex items-center  text-gray-300">Web Frameworks <img width={32} height={32} src="./down.svg" alt="img" className="invert-0" /></button>
               <div ref={divRef}
-                style={{ display: visibleDiv === 2 ? 'block' : 'none' }}>
-                <ul className='flex gap-6 items-center'>
-                  <li className=' '><img src="./express.svg" alt="" width={32} height={32} />Express</li>
+                style={{ display: visibleDiv === 2 ? "block" : "none" }}>
+                <ul className="flex gap-6 items-center">
+                  <li className=" "><img src="./express.svg" alt="" width={32} height={32} />Express</li>
                   <li><img src="./react.svg" alt="" width={32} height={32} />React</li>
-                  <li className='mt-3'><img src="./js.svg" alt="" width={32} height={32} />NodeJS</li>
+                  <li className="mt-3"><img src="./js.svg" alt="" width={32} height={32} />NodeJS</li>
                   <li><img src="./next.svg" alt="" />NextJS</li>
                   <li><img src="./vite.svg" alt="" />Vite</li>
                 </ul>
               </div>
               <hr />
 
-              <button onClick={() => handleButtonClick(3)} className='cursor-pointer hover:text-purple-800  flex items-center text-gray-300'>Languages<img width={32} height={32} src="./down.svg" alt="img" className='invert-0' /></button>
+              <button onClick={() => handleButtonClick(3)} className="cursor-pointer hover:text-purple-800  flex items-center text-gray-300">Languages<img width={32} height={32} src="./down.svg" alt="img" className="invert-0" /></button>
               <div ref={divRef}
-                style={{ display: visibleDiv === 3 ? 'block' : 'none' }}>
-                <ul className='flex gap-6 items-center'>
-                  <li className=''><img src="./js.svg" alt="" width={32} height={32} />Javascipt</li>
+                style={{ display: visibleDiv === 3 ? "block" : "none" }}>
+                <ul className="flex gap-6 items-center">
+                  <li className=""><img src="./js.svg" alt="" width={32} height={32} />Javascipt</li>
                   <li><img src="./python.svg" alt="" width={32} height={32} />Python</li>
-                  <li className='mt-3'><img src="./c++.svg" alt="" width={32} height={32} />C++</li>
+                  <li className="mt-3"><img src="./c++.svg" alt="" width={32} height={32} />C++</li>
                 </ul>
               </div>
               <hr />
 
 
-              <button onClick={() => handleButtonClick(4)} className='cursor-pointer hover:text-purple-800  flex items-center text-gray-300'>Tools <img width={32} height={32} src="./down.svg" alt="img" className='invert-0' /></button>
+              <button onClick={() => handleButtonClick(4)} className="cursor-pointer hover:text-purple-800  flex items-center text-gray-300">Tools <img width={32} height={32} src="./down.svg" alt="img" className="invert-0" /></button>
               <div ref={divRef}
-                style={{ display: visibleDiv === 4 ? 'block' : 'none' }}>
-                <ul className='flex gap-6 items-center'>
-                  <li className=''><img src="./vs.svg" alt="" width={32} height={32} />VS Code</li>
+                style={{ display: visibleDiv === 4 ? "block" : "none" }}>
+                <ul className="flex gap-6 items-center">
+                  <li className=""><img src="./vs.svg" alt="" width={32} height={32} />VS Code</li>
                   <li><img src="./bash.svg" alt="" width={32} height={32} />BASH</li>
-                  <li className='mt-3'><img src="./spline.jpg" alt="" width={32} height={32} />Spline</li>
+                  <li className="mt-3"><img src="./spline.jpg" alt="" width={32} height={32} />Spline</li>
                   <li><img src="./figma.svg" alt="" />Figma</li>
                   <li><img src="./npm.svg" alt="" />NPM</li>
                 </ul>
@@ -157,7 +157,7 @@ export default function Home() {
             <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
               <h3 className="text-2xl">Spotify clone</h3>
               <hr />
-              <p className="mt-2">A Spotify Clone built with HTML, CSS, and JavaScript, replicating the music streaming platform's basic features such as creating playlists, and playing music. It demonstrates my skills in front-end development and user interface design.</p>
+              <p className="mt-2">A Spotify Clone built with HTML, CSS, and JavaScript, replicating the music streaming platform"s basic features such as creating playlists, and playing music. It demonstrates my skills in front-end development and user interface design.</p>
               <a href="https://github.com/kritigaba710/spotify-project.git" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">View on GitHub</a>
             </div>
           </div>
@@ -165,9 +165,9 @@ export default function Home() {
 
         <section id="contact" className="py-20 max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Contact Me</h2>
-          <p className='flex flex-col'>
-            <span className='text-purple-320 text-2xl font-semibold'>Let's Work Together</span>
-            <span className='text-gray-300 px-9'>I'm currently looking for a new opportunity. Whether you have a question or just want to say hi, I'll try my best to get back to you!</span>
+          <p className="flex flex-col">
+            <span className="text-purple-320 text-2xl font-semibold">Let"s Work Together</span>
+            <span className="text-gray-300 px-9">I"m currently looking for a new opportunity. Whether you have a question or just want to say hi, I"ll try my best to get back to you!</span>
           </p>
           <p className="mt-4">Email: <a href="mailto:your.email@example.com" className="text-blue-400">kritigaba31@gmail.com</a></p>
           <p>LinkedIn: <a href="https://www.linkedin.com/in/kriti-gaba-47623b287/" target="_blank" rel="noopener noreferrer" className="text-blue-400">Kriti Gaba</a></p>
