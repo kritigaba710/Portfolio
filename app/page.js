@@ -53,7 +53,7 @@ export default function Home() {
     </div>
     {/* Text */}
     <div className="mt-4 flex flex-col w-2/3 text-center md:text-left">
-      <span className="text-3xl font-bold mx-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Hello, I"m</span>
+      <span className="text-3xl font-bold mx-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Hello, I'm</span>
       <span className="text-3xl mx-2">Kriti</span>
       <p className="text-gray-500 text-sm mx-3">
         I am a MERN stack Developer with a strong passion for building dynamic, scalable, and high-performance web applications. With expertise in MongoDB, Express.js, React, and Node.js, I specialize in developing responsive front-end interfaces and robust back-end systems. My front-end skills allow me to craft seamless and interactive user experiences using React.js, ensuring intuitive and engaging applications. On the backend, I leverage Node.js and Express.js to manage authentication and optimize server-side performance. From designing intuitive UIs using Spline, Figma to handling server-side logic and database operations, I excel in the full-stack development lifecycle, delivering modern web solutions that meet both technical and business needs.
@@ -68,7 +68,7 @@ export default function Home() {
           <h2 className="text-4xl font-semibold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Education</h2>
           <div className="mt-6">
             <div className="bg-gray-800 p-6 rounded-lg shadow-lg mb-6">
-              <h3 className="text-2xl">Bachelor"s of Computers & Applications</h3>
+              <h3 className="text-2xl">Bachelor's of Computers & Applications</h3>
               <p className="mt-2">Maharishi Markandeshwar (Deemed to be University)  (2023 - 2026)</p>
               <p className="text-gray-500">CGPA: 8.0/10</p>
               <p className="mt-2 text-gray-400">Studying advanced concepts in computer science, focusing on web development, algorithms, and data structures.</p>
@@ -158,7 +158,7 @@ export default function Home() {
             <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
               <h3 className="text-2xl">Spotify clone</h3>
               <hr />
-              <p className="mt-2">A Spotify Clone built with HTML, CSS, and JavaScript, replicating the music streaming platform"s basic features such as creating playlists, and playing music. It demonstrates my skills in front-end development and user interface design.</p>
+              <p className="mt-2">A Spotify Clone built with HTML, CSS, and JavaScript, replicating the music streaming platform's basic features such as creating playlists, and playing music. It demonstrates my skills in front-end development and user interface design.</p>
               <a href="https://github.com/kritigaba710/spotify-project.git" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">View on GitHub</a>
             </div>
           </div>
