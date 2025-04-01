@@ -1,4 +1,5 @@
 "use client"
+import Image from "next/image";
 import Head from "next/head";
 import { useRef, useState } from "react";
 
@@ -48,7 +49,7 @@ export default function Home() {
   <div className="flex flex-col md:flex-row justify-center items-center mt-8">
     {/* Image */}
     <div className="rounded-full mx-6 my-4 w-60 h-60 overflow-hidden border-2 border-gray-300 mb-8 md:mb-0">
-      <img src="./me.jpg" alt="image" className="w-full h-full object-cover" />
+      <Image src="./me.jpg" alt="image" className="w-full h-full object-cover" />
     </div>
     {/* Text */}
     <div className="mt-4 flex flex-col w-2/3 text-center md:text-left">
@@ -84,55 +85,55 @@ export default function Home() {
         <section id="skills" className="py-20 max-w-4xl mx-auto ">
           <h2 className="text-4xl font-semibold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Skills</h2>
           <div className="flex gap-36 items-center">
-            <div><img src="./skill.svg" alt="" width={200} height={200} /></div>
+            <div><Image src="./skill.svg" alt="" width={200} height={200} /></div>
             <div className="flex flex-col">
-              <button onClick={() => handleButtonClick(1)} className="cursor-pointer flex hover:text-purple-800 items-center text-gray-300">Frontend Technologies <img width={32} height={32} src="./down.svg" alt="img" className="invert-0" /></button>
+              <button onClick={() => handleButtonClick(1)} className="cursor-pointer flex hover:text-purple-800 items-center text-gray-300">Frontend Technologies <Image width={32} height={32} src="./down.svg" alt="Image" className="invert-0" /></button>
               <div ref={divRef}
                 style={{ display: visibleDiv === 1 ? "block" : "none" }}>
                 <ul className="flex gap-6 items-center">
-                  <li className=""><img src="./html.svg" alt="" width={32} height={32} />HTML5</li>
-                  <li><img src="./css.avif" alt="" width={32} height={32} />CSS3</li>
-                  <li className="mt-3"><img src="./js.svg" alt="" width={32} height={32} />Javascript</li>
-                  <li><img src="./tailwind.svg" alt="" />TailwindCSS</li>
+                  <li className=""><Image src="./html.svg" alt="" width={32} height={32} />HTML5</li>
+                  <li><Image src="./css.avif" alt="" width={32} height={32} />CSS3</li>
+                  <li className="mt-3"><Image src="./js.svg" alt="" width={32} height={32} />Javascript</li>
+                  <li><Image src="./tailwind.svg" alt="" />TailwindCSS</li>
                 </ul>
               </div>
               <hr />
 
 
-              <button onClick={() => handleButtonClick(2)} className="cursor-pointer hover:text-purple-800  flex items-center  text-gray-300">Web Frameworks <img width={32} height={32} src="./down.svg" alt="img" className="invert-0" /></button>
+              <button onClick={() => handleButtonClick(2)} className="cursor-pointer hover:text-purple-800  flex items-center  text-gray-300">Web Frameworks <Image width={32} height={32} src="./down.svg" alt="Image" className="invert-0" /></button>
               <div ref={divRef}
                 style={{ display: visibleDiv === 2 ? "block" : "none" }}>
                 <ul className="flex gap-6 items-center">
-                  <li className=" "><img src="./express.svg" alt="" width={32} height={32} />Express</li>
-                  <li><img src="./react.svg" alt="" width={32} height={32} />React</li>
-                  <li className="mt-3"><img src="./js.svg" alt="" width={32} height={32} />NodeJS</li>
-                  <li><img src="./next.svg" alt="" />NextJS</li>
-                  <li><img src="./vite.svg" alt="" />Vite</li>
+                  <li className=" "><Image src="./express.svg" alt="" width={32} height={32} />Express</li>
+                  <li><Image src="./react.svg" alt="" width={32} height={32} />React</li>
+                  <li className="mt-3"><Image src="./js.svg" alt="" width={32} height={32} />NodeJS</li>
+                  <li><Image src="./next.svg" alt="" />NextJS</li>
+                  <li><Image src="./vite.svg" alt="" />Vite</li>
                 </ul>
               </div>
               <hr />
 
-              <button onClick={() => handleButtonClick(3)} className="cursor-pointer hover:text-purple-800  flex items-center text-gray-300">Languages<img width={32} height={32} src="./down.svg" alt="img" className="invert-0" /></button>
+              <button onClick={() => handleButtonClick(3)} className="cursor-pointer hover:text-purple-800  flex items-center text-gray-300">Languages<Image width={32} height={32} src="./down.svg" alt="Image" className="invert-0" /></button>
               <div ref={divRef}
                 style={{ display: visibleDiv === 3 ? "block" : "none" }}>
                 <ul className="flex gap-6 items-center">
-                  <li className=""><img src="./js.svg" alt="" width={32} height={32} />Javascipt</li>
-                  <li><img src="./python.svg" alt="" width={32} height={32} />Python</li>
-                  <li className="mt-3"><img src="./c++.svg" alt="" width={32} height={32} />C++</li>
+                  <li className=""><Image src="./js.svg" alt="" width={32} height={32} />Javascipt</li>
+                  <li><Image src="./python.svg" alt="" width={32} height={32} />Python</li>
+                  <li className="mt-3"><Image src="./c++.svg" alt="" width={32} height={32} />C++</li>
                 </ul>
               </div>
               <hr />
 
 
-              <button onClick={() => handleButtonClick(4)} className="cursor-pointer hover:text-purple-800  flex items-center text-gray-300">Tools <img width={32} height={32} src="./down.svg" alt="img" className="invert-0" /></button>
+              <button onClick={() => handleButtonClick(4)} className="cursor-pointer hover:text-purple-800  flex items-center text-gray-300">Tools <Image width={32} height={32} src="./down.svg" alt="Image" className="invert-0" /></button>
               <div ref={divRef}
                 style={{ display: visibleDiv === 4 ? "block" : "none" }}>
                 <ul className="flex gap-6 items-center">
-                  <li className=""><img src="./vs.svg" alt="" width={32} height={32} />VS Code</li>
-                  <li><img src="./bash.svg" alt="" width={32} height={32} />BASH</li>
-                  <li className="mt-3"><img src="./spline.jpg" alt="" width={32} height={32} />Spline</li>
-                  <li><img src="./figma.svg" alt="" />Figma</li>
-                  <li><img src="./npm.svg" alt="" />NPM</li>
+                  <li className=""><Image src="./vs.svg" alt="" width={32} height={32} />VS Code</li>
+                  <li><Image src="./bash.svg" alt="" width={32} height={32} />BASH</li>
+                  <li className="mt-3"><Image src="./spline.jpg" alt="" width={32} height={32} />Spline</li>
+                  <li><Image src="./figma.svg" alt="" />Figma</li>
+                  <li><Image src="./npm.svg" alt="" />NPM</li>
                 </ul>
               </div>
             </div>
@@ -166,8 +167,8 @@ export default function Home() {
         <section id="contact" className="py-20 max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Contact Me</h2>
           <p className="flex flex-col">
-            <span className="text-purple-320 text-2xl font-semibold">Let"s Work Together</span>
-            <span className="text-gray-300 px-9">I"m currently looking for a new opportunity. Whether you have a question or just want to say hi, I"ll try my best to get back to you!</span>
+            <span className="text-purple-320 text-2xl font-semibold">Let's Work Together</span>
+            <span className="text-gray-300 px-9">I'm currently looking for a new opportunity. Whether you have a question or just want to say hi, I'll try my best to get back to you!</span>
           </p>
           <p className="mt-4">Email: <a href="mailto:your.email@example.com" className="text-blue-400">kritigaba31@gmail.com</a></p>
           <p>LinkedIn: <a href="https://www.linkedin.com/in/kriti-gaba-47623b287/" target="_blank" rel="noopener noreferrer" className="text-blue-400">Kriti Gaba</a></p>
