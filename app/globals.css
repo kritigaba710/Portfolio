@@ -45,6 +45,37 @@ body {
   border-top: 2px dotted gray;
   height: 2px;
 }
+/* Initial styling for the floating image */
+.floating-image {
+  animation: floating 5s infinite ease-in-out, hoverZoom 0.3s ease-out;
+  transition: transform 0.1s ease-out;
+  will-change: transform;
+  position: relative;
+}
+
+/* Create the floating effect */
+@keyframes floating {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-15px, 15px); /* Moves left and down */
+  }
+  50% {
+    transform: translate(15px, -15px); /* Moves right and up */
+  }
+  75% {
+    transform: translate(-15px, -15px); /* Moves left and up */
+  }
+  100% {
+    transform: translate(15px, 15px); /* Moves right and down */
+  }
+}
+
+/* Optional zoom effect when hovering over the image */
+.floating-image:hover {
+  transform: scale(1.1);
+}
 
 
 

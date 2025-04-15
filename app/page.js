@@ -2,8 +2,12 @@
 import Image from "next/image";
 import Head from "next/head";
 import { useRef, useState } from "react";
+import { motion } from "framer-motion";
+import FloatingImage from "./Components/FloatingImage";
 
 export default function Home() {
+
+  const [isExpanded, setIsExpanded] = useState(false);
   const divRef = useRef(null);
   const [visibleDiv, setVisibleDiv] = useState(false);
 
@@ -12,7 +16,7 @@ export default function Home() {
   };
 
   return (
-    <div className="relative h-full w-full overflow-hidden bg-slate-950 "   style={{
+    <div className="relative h-full w-full overflow-hidden bg-slate-950 " style={{
       background: 'radial-gradient(circle, rgba(15, 19, 41, 1) 12%, rgba(23, 2, 32, 1) 64%)',
       padding: '20px',
       borderRadius: '8px',
@@ -40,15 +44,23 @@ export default function Home() {
 
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-320 text-white pt-20">
         <header className="text-center py-35">
-          <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 fade-in">Welcome To My</h1>
-          <p className="text-3xl font-semibold text-purple-320 fade-in">Portfolio Website</p>
-          <p className="text-sm mt-4 fade-in">I am a versatile developer and designer, creating both functional web applications and visually engaging user interfaces.</p>
-          <a href="#projects" className="mt-6 inline-block py-1.5 px-3 rounded-full text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-2 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 fade-in">View My Work</a>
+          <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 fade-in">Welcome To My</h1>
+          <p className="text-5xl font-semibold text-purple-320 fade-in">Portfolio Website</p>
+          <p className="text-xl text-gray-300 mt-4 fade-in">I am a versatile developer and designer, creating both functional web applications and visually engaging user interfaces.</p>
+          <a href="#projects" className="mt-6 inline-block px-4 py-2 rounded-full text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-2 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 fade-in">View My Work</a>
         </header>
 
 
         <section id="about" className="py-20 pt-30 max-w-4xl mx-auto">
-          <h2 className="text-4xl font-semibold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">About Me</h2>
+          <motion.h2
+            className="text-5xl font-semibold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600"
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            About Me
+          </motion.h2>
           <div className="flex flex-col md:flex-row justify-center items-center mt-8">
             {/* Image */}
             <div className="rounded-full mx-6 my-4 w-60 h-60 overflow-hidden border-2 border-gray-300 mb-8 md:mb-0">
@@ -56,12 +68,24 @@ export default function Home() {
             </div>
             {/* Text */}
             <div className="mt-4 flex flex-col w-2/3 text-center md:text-left">
-              <span className="text-3xl font-bold mx-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Hello, I&apos;m</span>
-              <span className="text-3xl mx-2">Kriti</span>
-              <p className="text-gray-500 text-sm mx-3">
-                I am a MERN stack Developer with a strong passion for building dynamic, scalable, and high-performance web applications. With expertise in MongoDB, Express.js, React, and Node.js, I specialize in developing responsive front-end interfaces and robust back-end systems. My front-end skills allow me to craft seamless and interactive user experiences using React.js, ensuring intuitive and engaging applications. On the backend, I leverage Node.js and Express.js to manage authentication and optimize server-side performance. From designing intuitive UIs using Spline, Figma to handling server-side logic and database operations, I excel in the full-stack development lifecycle, delivering modern web solutions that meet both technical and business needs.
-                I am currently pursuing a Bachelor&apos;s of Computers & Applications at Maharishi Markandeshwar University (2023 - 2026) with a CGPA of 8.0/10. My studies focus on advanced computer science concepts, including web development, algorithms, and data structures. I completed high school at Govt. model sanskriti senior seconday School (2021 - 2023) with a focus on mathematics and information technology, securing 87%.
+              <span className="text-3xl mx-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 font-bold">Hello, I&apos;m</span>
+              <span className="text-3xl mx-2 font-bold">Kriti</span>
+              <p className="text-gray-500 text-xl mx-3">
+                I’m a MERN Stack Developer passionate about building dynamic and scalable web applications using MongoDB, Express.js, React, and Node.js. I focus on creating seamless front-end experiences and robust back-end systems.
+                {isExpanded && (
+                  <>
+                    {" "}
+                    With strong command over React.js, I craft interactive UIs, while using Node.js and Express.js to manage backend logic, authentication, and performance optimization. I also work with tools like Spline and Figma for UI design and handle full-stack project lifecycles effectively. Currently pursuing a Bachelor’s in Computer Applications (2023–2026) at Maharishi Markandeshwar University with an 8.0 CGPA. I completed my high school in 2023 with 87%, specializing in mathematics and IT.
+                  </>
+                )}
               </p>
+              <button
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="text-blue-600 mt-2 hover:underline"
+              >
+                {isExpanded ? "Read Less" : "Read More"}
+              </button>
+
             </div>
           </div>
         </section>
@@ -69,115 +93,159 @@ export default function Home() {
 
 
 
-    <section id="skills" className="py-20 max-w-4xl mx-auto">
-  <h2 className="text-4xl font-semibold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Skills</h2>
-  <div className="flex flex-col md:flex-row gap-6 items-center">
-    <div className="flex justify-center w-full md:w-1/2">
-      <Image src="/skill.svg" alt="Skill Image" width={200} height={200} />
+        <section id="skills" className="py-20 max-w-4xl mx-auto">
+          <motion.h2
+            className="text-5xl font-semibold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600"
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            Skills
+          </motion.h2>
+          <div className="flex flex-col md:flex-row gap-10 items-center">
+          <div className="flex justify-center items-center h-screen">
+      <FloatingImage />
     </div>
-    <div className="flex flex-col w-full md:w-1/2">
-      {/* Frontend Technologies */}
-      <button
-        onClick={() => handleButtonClick(1)}
-        className="cursor-pointer flex hover:text-purple-800 items-center text-gray-300 mb-4"
-      >
-        Frontend Technologies
-        <Image width={32} height={32} src="/down.svg" alt="Down Arrow" className="invert-0 ml-2" />
-      </button>
-      <div ref={divRef} style={{ display: visibleDiv === 1 ? 'block' : 'none' }}>
-        <ul className="flex flex-wrap gap-6">
-          <li className=""><Image src="/html.svg" alt="" width={32} height={32} />HTML5</li>
-          <li><Image src="/css.avif" alt="" width={32} height={32} />CSS3</li>
-          <li className="mt-3"><Image src="/js.svg" alt="" width={32} height={32} />JavaScript</li>
-          <li><Image src="/tailwind.svg" alt="" width={32} height={32} />TailwindCSS</li>
-        </ul>
-      </div>
-      <hr />
-      
-      {/* Web Frameworks */}
-      <button
-        onClick={() => handleButtonClick(2)}
-        className="cursor-pointer hover:text-purple-800 flex items-center text-gray-300 mb-4"
-      >
-        Web Frameworks
-        <Image width={32} height={32} src="/down.svg" alt="Down Arrow" className="invert-0 ml-2" />
-      </button>
-      <div ref={divRef} style={{ display: visibleDiv === 2 ? 'block' : 'none' }}>
-        <ul className="flex flex-wrap gap-6">
-          <li><Image src="/express.svg" alt="" width={32} height={32} />Express</li>
-          <li><Image src="./react.svg" alt="" width={32} height={32} />React</li>
-          <li><Image src="/js.svg" alt="" width={32} height={32} />NodeJS</li>
-          <li><Image src="/next.svg" alt="" width={32} height={32} />NextJS</li>
-          <li><Image src="/vite.svg" alt="" width={32} height={32} />Vite</li>
-        </ul>
-      </div>
-      <hr />
-      
-      {/* Languages */}
-      <button
-        onClick={() => handleButtonClick(3)}
-        className="cursor-pointer hover:text-purple-800 flex items-center text-gray-300 mb-4"
-      >
-        Languages
-        <Image width={32} height={32} src="/down.svg" alt="Down Arrow" className="invert-0 ml-2" />
-      </button>
-      <div ref={divRef} style={{ display: visibleDiv === 3 ? 'block' : 'none' }}>
-        <ul className="flex flex-wrap gap-6">
-          <li><Image src="/js.svg" alt="" width={32} height={32} />JavaScript</li>
-          <li><Image src="/python.svg" alt="" width={32} height={32} />Python</li>
-          <li><Image src="/c++.svg" alt="" width={32} height={32} />C++</li>
-        </ul>
-      </div>
-      <hr />
-      
-      {/* Tools */}
-      <button
-        onClick={() => handleButtonClick(4)}
-        className="cursor-pointer hover:text-purple-800 flex items-center text-gray-300 mb-4"
-      >
-        Tools
-        <Image width={32} height={32} src="/down.svg" alt="Down Arrow" className="invert-0 ml-2" />
-      </button>
-      <div ref={divRef} style={{ display: visibleDiv === 4 ? 'block' : 'none' }}>
-        <ul className="flex flex-wrap gap-6">
-          <li><Image src="/vs.svg" alt="" width={32} height={32} />VS Code</li>
-          <li><Image src="/bash.svg" alt="" width={32} height={32} />BASH</li>
-          <li><Image src="/spline.jpg" alt="" width={32} height={32} />Spline</li>
-          <li><Image src="/figma.svg" alt="" width={32} height={32} />Figma</li>
-          <li><Image src="/npm.svg" alt="" width={32} height={32} />NPM</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+            <div className="flex flex-col w-full md:w-1/2">
+              {/* Frontend Technologies */}
+              <button
+                onClick={() => handleButtonClick(1)}
+                className="cursor-pointer text-2xl flex hover:text-purple-800 items-center text-gray-300 mb-4"
+              >
+                Frontend Technologies
+                <Image width={32} height={32} src="/down.svg" alt="Down Arrow" className="invert-0 ml-2" />
+              </button>
+              <div ref={divRef} style={{ display: visibleDiv === 1 ? 'block' : 'none' }}>
+                <ul className="flex flex-wrap gap-6">
+                  <li className=""><Image src="/html.svg" alt="" width={32} height={32} />HTML5</li>
+                  <li><Image src="/css.avif" alt="" width={32} height={32} />CSS3</li>
+                  <li className="mt-3"><Image src="/js.svg" alt="" width={32} height={32} />JavaScript</li>
+                  <li><Image src="/tailwind.svg" alt="" width={32} height={32} />TailwindCSS</li>
+                </ul>
+              </div>
+              <hr />
+
+              {/* Web Frameworks */}
+              <button
+                onClick={() => handleButtonClick(2)}
+                className="cursor-pointer hover:text-purple-800 flex text-2xl items-center text-gray-300 mb-4"
+              >
+                Web Frameworks
+                <Image width={32} height={32} src="/down.svg" alt="Down Arrow" className="invert-0 ml-2" />
+              </button>
+              <div ref={divRef} style={{ display: visibleDiv === 2 ? 'block' : 'none' }}>
+                <ul className="flex flex-wrap gap-6">
+                  <li><Image src="/express.svg" alt="" width={32} height={32} />Express</li>
+                  <li><Image src="./react.svg" alt="" width={32} height={32} />React</li>
+                  <li><Image src="/js.svg" alt="" width={32} height={32} />NodeJS</li>
+                  <li><Image src="/next.svg" alt="" width={32} height={32} />NextJS</li>
+                  <li><Image src="/vite.svg" alt="" width={32} height={32} />Vite</li>
+                </ul>
+              </div>
+              <hr />
+
+              {/* Languages */}
+              <button
+                onClick={() => handleButtonClick(3)}
+                className="cursor-pointer hover:text-purple-800 flex text-2xl items-center text-gray-300 mb-4"
+              >
+                Languages
+                <Image width={32} height={32} src="/down.svg" alt="Down Arrow" className="invert-0 ml-2" />
+              </button>
+              <div ref={divRef} style={{ display: visibleDiv === 3 ? 'block' : 'none' }}>
+                <ul className="flex flex-wrap gap-6">
+                  <li><Image src="/js.svg" alt="" width={32} height={32} />JavaScript</li>
+                  <li><Image src="/python.svg" alt="" width={32} height={32} />Python</li>
+                  <li><Image src="/c++.svg" alt="" width={32} height={32} />C++</li>
+                </ul>
+              </div>
+              <hr />
+
+              {/* Tools */}
+              <button
+                onClick={() => handleButtonClick(4)}
+                className="cursor-pointer hover:text-purple-800 flex text-2xl items-center text-gray-300 mb-4"
+              >
+                Tools
+                <Image width={32} height={32} src="/down.svg" alt="Down Arrow" className="invert-0 ml-2" />
+              </button>
+              <div ref={divRef} style={{ display: visibleDiv === 4 ? 'block' : 'none' }}>
+                <ul className="flex flex-wrap gap-6">
+                  <li><Image src="/vs.svg" alt="" width={32} height={32} />VS Code</li>
+                  <li><Image src="/bash.svg" alt="" width={32} height={32} />BASH</li>
+                  <li><Image src="/spline.jpg" alt="" width={32} height={32} />Spline</li>
+                  <li><Image src="/figma.svg" alt="" width={32} height={32} />Figma</li>
+                  <li><Image src="/npm.svg" alt="" width={32} height={32} />NPM</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
 
 
         <section id="projects" className="py-20 max-w-4xl mx-auto">
-          <h2 className="text-3xl font-semibold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Projects</h2>
-          <div className="mt-6 grid mx-4 grid-cols-1 md:grid-cols-2 gap-6">
-            <div className=" p-6 rounded-lg shadow-lg bg-cover bg-center bg-gray-800"  >
-              <h3 className="text-2xl">Jarvis</h3>
-              <hr />
-              <p className="mt-2">A voice-controlled personal assistant built using HTML, CSS, and JavaScript. It allows users to perform tasks like fetching real-time information, setting reminders, and controlling applications through voice commands.</p>
-              <a href="https://github.com/kritigaba710/Jarvis-js.git" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">View on GitHub</a>
-            </div>
-            <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-              <h3 className="text-2xl">Todo App</h3>
-              <hr />
-              <p className="mt-2">A simple To-Do app built with React that allows users to add, edit, and delete tasks. It features a clean, responsive UI and local storage to persist tasks across session</p>
-              <a href="https://github.com/kritigaba710/Todo-app.git" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">View on GitHub</a>
-            </div>
-            <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-              <h3 className="text-2xl">Spotify clone</h3>
-              <hr />
-              <p className="mt-2">A Spotify Clone built with HTML, CSS, and JavaScript, replicating the music streaming platform&apos;s basic features such as creating playlists, and playing music. It demonstrates my skills in front-end development and user interface design.</p>
-              <a href="https://github.com/kritigaba710/spotify-project.git" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">View on GitHub</a>
-            </div>
-          </div>
+          <motion.h2
+            className="text-5xl font-semibold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600"
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            Projects
+          </motion.h2>
+          <div className="mt-6 grid mx-4 grid-cols-1 md:grid-cols-2 gap-10">
+  {[
+    { title: "Jarvis", img: "/jarviss.png", link: "https://github.com/kritigaba710/Jarvis-js.git" },
+    { title: "Todo App", img: "/todo.png", link: "https://github.com/kritigaba710/Todo-app.git" },
+    { title: "Spotify clone", img: "/spotify.png", link: "https://github.com/kritigaba710/spotify-project.git" },
+    { title: "ID-Card Generator", img: "/idcard.png", link: "https://github.com/kritigaba710/IDCardGenerator.git" },
+  ].map((card, index) => (
+    <motion.div
+      key={card.title}
+      initial={{
+        opacity: 0,
+        scale: 0.5, // start smaller
+        rotateX: 90, // start rotated like folded
+      }}
+      whileInView={{
+        opacity: 1,
+        scale: 1,
+        rotateX: 0, // unfold to original position
+      }}
+      transition={{
+        duration: 0.8,
+        ease: "easeOut",
+        delay: index * 0.2, // stagger the animations
+      }}
+      className="card p-6 flex flex-col justify-center items-center rounded-lg shadow-lg bg-cover bg-center bg-gradient-to-r from-[#524664] to-[#422b47]"
+    >
+      <div><img src={card.img} width={200} height={200} alt={card.title} /></div>
+      <h3 className="text-2xl">{card.title}</h3>
+      <a href={card.link} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
+        View on GitHub
+      </a>
+    </motion.div>
+  ))}
+</div>
+
         </section>
 
+      
+        <div className="h-[2px] w-[80%] mx-auto bg-gradient-to-r from-[#371f4d] via-[#2f0b3d] to-red-400 rounded-full" />
+
+
+
         <section id="contact" className="py-20 max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Contact Me</h2>
+          <motion.h2
+            className="text-5xl font-semibold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600"
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            <div className="flex justify-center gap-3 items-center"><span>Contact Me</span><span className="text-pink-500 text-4xl">★</span></div>
+          </motion.h2>
           <p className="flex flex-col">
             <span className="text-purple-320 text-2xl font-semibold">Let&apos;s Work Together</span>
             <span className="text-gray-300 px-9">I&apos;m currently looking for a new opportunity. Whether you have a question or just want to say hi, I&apos;ll try my best to get back to you!</span>
