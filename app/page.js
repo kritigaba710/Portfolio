@@ -28,7 +28,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* Fixed Navbar */}
+     
       <header className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-md shadow-md text-white">
         <nav className="flex justify-between items-center py-6 px-10">
           <div className="text-2xl font-semibold text-gray-300 hidden md:block">My Portfolio</div>
@@ -62,11 +62,11 @@ export default function Home() {
             About Me
           </motion.h2>
           <div className="flex flex-col md:flex-row justify-center items-center mt-8">
-            {/* Image */}
+            
             <div className="rounded-full mx-6 my-4 w-60 h-60 overflow-hidden border-2 border-gray-300 mb-8 md:mb-0">
               <Image src="/me.jpg" alt="image" width={100} height={100} className="w-full h-full object-cover" />
             </div>
-            {/* Text */}
+            
             <div className="mt-4 flex flex-col w-2/3 text-center md:text-left">
               <span className="text-3xl mx-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 font-bold">Hello, I&apos;m</span>
               <span className="text-3xl mx-2 font-bold">Kriti</span>
@@ -108,7 +108,7 @@ export default function Home() {
       <FloatingImage />
     </div>
             <div className="flex flex-col w-full md:w-1/2">
-              {/* Frontend Technologies */}
+              
               <button
                 onClick={() => handleButtonClick(1)}
                 className="cursor-pointer text-2xl flex hover:text-purple-800 items-center text-gray-300 mb-4"
@@ -126,7 +126,7 @@ export default function Home() {
               </div>
               <hr />
 
-              {/* Web Frameworks */}
+             
               <button
                 onClick={() => handleButtonClick(2)}
                 className="cursor-pointer hover:text-purple-800 flex text-2xl items-center text-gray-300 mb-4"
@@ -145,7 +145,7 @@ export default function Home() {
               </div>
               <hr />
 
-              {/* Languages */}
+             
               <button
                 onClick={() => handleButtonClick(3)}
                 className="cursor-pointer hover:text-purple-800 flex text-2xl items-center text-gray-300 mb-4"
@@ -162,7 +162,7 @@ export default function Home() {
               </div>
               <hr />
 
-              {/* Tools */}
+              
               <button
                 onClick={() => handleButtonClick(4)}
                 className="cursor-pointer hover:text-purple-800 flex text-2xl items-center text-gray-300 mb-4"
@@ -200,23 +200,24 @@ export default function Home() {
     { title: "Todo App", img: "/todo.png", link: "https://github.com/kritigaba710/Todo-app.git" },
     { title: "Spotify clone", img: "/spotify.png", link: "https://github.com/kritigaba710/spotify-project.git" },
     { title: "ID-Card Generator", img: "/idcard.png", link: "https://github.com/kritigaba710/IDCardGenerator.git" },
+    { title: "Finance-Visualizer", img: "/graph.png", link: "https://github.com/kritigaba710/Personal-Finance-Visualizer.git" },
   ].map((card, index) => (
     <motion.div
       key={card.title}
       initial={{
         opacity: 0,
-        scale: 0.5, // start smaller
-        rotateX: 90, // start rotated like folded
+        scale: 0.5,
+        rotateX: 90, 
       }}
       whileInView={{
         opacity: 1,
         scale: 1,
-        rotateX: 0, // unfold to original position
+        rotateX: 0, 
       }}
       transition={{
         duration: 0.8,
         ease: "easeOut",
-        delay: index * 0.2, // stagger the animations
+        delay: index * 0.2, 
       }}
       className="card p-6 flex flex-col justify-center items-center rounded-lg shadow-lg bg-cover bg-center bg-gradient-to-r from-[#524664] to-[#422b47]"
     >
